@@ -9,30 +9,23 @@ function countPositivesSumNegatives(input) {
   var sum = 0;
   var arr = [];
 
-  if (input == [] || null) {
-    arr = [];
-    return arr;
+  if (input == null || input.length == 0) {
+    return [];
   } else {
     for (i = 0; i < input.length; i++) {
       if (input[i] > 0) {
         count++;
       }
-      console.log("input: " + input[i] + "count: " + count);
     }
 
     for (j = 0; j < input.length; j++) {
       const negInput = input[j];
       if (input[j] < 0) {
-        console.log(input[j]);
-        console.log("line 22 " + negInput);
-        sum = sum + input[j];
+        sum = sum + negInput;
       }
-      console.log("input: " + negInput + "sum: " + sum);
     }
-    console.log(count + ", " + sum);
     arr.push(count);
     arr.push(sum);
-    console.log("arr: " + arr);
     return arr;
   }
 }

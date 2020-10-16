@@ -38,3 +38,49 @@ function stray(numbers) {
 }
 
 stray(numbers);
+
+/////////////// Additional Soultions
+function stray(numbers) {
+  for (var i in numbers) {
+    if (numbers.indexOf(numbers[i]) === numbers.lastIndexOf(numbers[i])) {
+      return numbers[i];
+    }
+  }
+}
+
+////////////////////////
+const stray = (nums) => nums.reduce((a, b) => a ^ b);
+//////////////////
+function stray(numbers) {
+  var a = numbers.sort();
+
+  if (a[0] != a[1]) {
+    return a[0];
+  }
+  return a[a.length - 1];
+}
+//////////////////////
+function stray(numbers) {
+  var a = numbers.sort();
+
+  if (a[0] != a[1]) {
+    return a[0];
+  }
+  return a[a.length - 1];
+}
+////////////////////////
+function stray(numbers) {
+  return numbers.reduce((x, y) => x ^ y);
+}
+//////////////////////
+function stray(numbers) {
+  var sort = numbers.sort();
+  if (sort[0] === sort[1]) {
+    return sort[sort.length - 1];
+  } else {
+    return sort[0];
+  }
+}
+/////////////////////
+const stray = (arr) =>
+  ~~arr.filter((x) => arr.indexOf(x) === arr.lastIndexOf(x)).join("");
